@@ -87,7 +87,7 @@
 # ===================
 # 14. Longest Common Prefix
 # ===================
-# Time complexity O(N*M)
+# Time complexity : O(N*M)
 # ===================
 
 # class Solution(object):
@@ -155,6 +155,29 @@
 # print(result_4) # True
 
 # ===================
+# 21. Merge Two Sorted Lists (Linked List) (Unfinished)
+# ===================
+# Time complexity : 
+# ===================
+
+# class Solution(object):
+#     def mergeTwoLists(self, list1, list2):
+#         """
+#         :type list1: Optional[ListNode]
+#         :type list2: Optional[ListNode]
+#         :rtype: Optional[ListNode]
+#         """
+        
+# solution = Solution()
+# result_1 = solution.mergeTwoLists([1,2,4], [1,3,4])
+# result_2 = solution.mergeTwoLists([], [])
+# result_3 = solution.mergeTwoLists([], [0])
+
+# print(result_1) # True
+# print(result_2) # True
+# print(result_3) # False
+
+# ===================
 # 26. Remove Duplicates from Sorted Array
 # ===================
 
@@ -202,6 +225,34 @@
 
 # print(result_1) # [2,2] length 2
 # print(result_2) # [0,1,3,0,4] length 5
+
+# ===================
+# 35. Search Insert Position (Array)(Binary Search)(Unfinished)
+# ===================
+# Time complexity : 
+# ===================
+
+# class Solution(object):
+#     def searchInsert(self, nums, target):
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: int
+#         """
+#         for idx, num in enumerate(nums):
+#             if num == target:
+#                 return idx
+#             if target != num:
+
+
+# solution = Solution()
+# result_1 = solution.searchInsert([1,3,5,6], 5)
+# result_2 = solution.searchInsert([1,3,5,6], 2)
+# result_3 = solution.searchInsert([1,3,5,6], 7)
+
+# print(result_1) # 2
+# print(result_2) # 1
+# print(result_3) # 4        
 
 # ===================
 # 66. Plus One
