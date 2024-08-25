@@ -88,28 +88,33 @@
 # 14. Longest Common Prefix
 # ===================
 
-# class Solution(object):
-#     def longestCommonPrefix(self, strs):
-#         """
-#         :type strs: List[str]
-#         :rtype: str
-#         """
-#         if not strs:
-#             return ""
-#         prefix = strs[0]
-#         for string in strs[1:]:
-#             while not string.startswith(prefix):
-#                 prefix = prefix[:-1]
-#                 if not prefix:
-#                     return ""
-#         return prefix
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:
+            return ""
+        # Start with the first string
+        prefix = strs[0]
+        # Compare with each string
+        for string in strs[1:]:
+            # Check if current string starts with the prefix
+            while not string.startswith(prefix):
+                # Shorten the prefix
+                prefix = prefix[:-1]
+                # If prefix is empty, no common prefix
+                if not prefix:
+                    return ""
+        return prefix
                 
-# solution = Solution()
-# result_1 = solution.longestCommonPrefix(["flower","flow","flight"])
-# result_2 = solution.longestCommonPrefix(["dog","racecar","car"])
+solution = Solution()
+result_1 = solution.longestCommonPrefix(["flower","flow","flight"])
+result_2 = solution.longestCommonPrefix(["dog","racecar","car"])
 
-# print(result_1) # "fl"
-# print(result_2) # ""
+print(result_1) # "fl"
+print(result_2) # ""
 
 # ===================
 # 20. Valid Parentheses
