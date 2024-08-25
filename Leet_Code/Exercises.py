@@ -1,4 +1,4 @@
-
+# ===================
 # 1. Two Sum
 # ===================
 
@@ -83,6 +83,33 @@
 # print(result_1) # 3
 # print(result_2) # 58
 # print(result_3) # 1994
+
+# ===================
+# 14. Longest Common Prefix
+# ===================
+
+# class Solution(object):
+#     def longestCommonPrefix(self, strs):
+#         """
+#         :type strs: List[str]
+#         :rtype: str
+#         """
+#         if not strs:
+#             return ""
+#         prefix = strs[0]
+#         for string in strs[1:]:
+#             while not string.startswith(prefix):
+#                 prefix = prefix[:-1]
+#                 if not prefix:
+#                     return ""
+#         return prefix
+                
+# solution = Solution()
+# result_1 = solution.longestCommonPrefix(["flower","flow","flight"])
+# result_2 = solution.longestCommonPrefix(["dog","racecar","car"])
+
+# print(result_1) # "fl"
+# print(result_2) # ""
 
 # ===================
 # 20. Valid Parentheses
