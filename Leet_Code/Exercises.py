@@ -177,9 +177,11 @@
 # print(result_2) # True
 # print(result_3) # False
 
-# ===================
-# 26. Remove Duplicates from Sorted Array
-# ===================
+# ================================
+# 26. Remove Duplicates from Sorted Array (Array)(Two Pointers)
+# ================================
+# Time complexity : 
+# ================================
 
 # class Solution(object):
 #     def removeDuplicates(self, nums):
@@ -201,7 +203,7 @@
 # print(result_1) # [1,2] length 2
 # print(result_2) # [0,1,2,3,4] length 5
 
-# ===================
+# ================================
 # 27. Remove Element
 # ===================
 
@@ -253,6 +255,37 @@
 # print(result_1) # 2
 # print(result_2) # 1
 # print(result_3) # 4        
+
+# ================================
+# 53. Maximum Subarray (Array)(Divide and Conquer)(Dynamic Programming)
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# from numpy import inf 
+# (importing "numpy" also works, but it's slower)
+
+# class Solution(object):
+#     def maxSubArray(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         curr_max = 0
+#         overall_max = float('-inf')
+#         for num in nums:
+#             curr_max = max(curr_max + num, num)
+#             overall_max = max(overall_max, curr_max)
+#         return overall_max
+
+# solution = Solution()
+# result_1 = solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])
+# result_2 = solution.maxSubArray([1])
+# result_3 = solution.maxSubArray([5,4,-1,7,8])
+
+# print(result_1) # 6
+# print(result_2) # 1
+# print(result_3) # 23
 
 # ===================
 # 66. Plus One
@@ -307,4 +340,60 @@
 # print(result_1) # 5
 # print(result_2) # 0
 
-# ===================
+# ================================
+# 169. Majority Element (Array)(Hash_Table)(Divide_and_Conquer)(Sorting)(Could_be_improved)
+# ================================
+# Time complexity : 
+# ================================
+
+# class Solution(object):
+#     def majorityElement(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         element_count = {}
+#         for num in nums:
+#             if num not in element_count:
+#                 element_count[num] = 1
+#             else:
+#                 element_count[num] += 1
+#         return max(element_count, key=element_count.get)
+
+# solution = Solution()
+# result_1 = solution.majorityElement([3,2,3])
+# result_2 = solution.majorityElement([2,2,1,1,1,2,2])
+
+# print(result_1) # 3
+# print(result_2) # 2
+
+# ================================
+# 217. Contains Duplicate (Array)(Hash_Table)(Sorting)
+# ================================
+# Time complexity : O(N)
+# ================================
+
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: bool
+#         """
+#         num_set = set()
+#         for i in nums:
+#             if i in num_set:
+#                 return True
+#             else:
+#                 num_set.add(i)
+#         return False
+
+# solution = Solution()
+# result_1 = solution.containsDuplicate([1,2,3,1])
+# result_2 = solution.containsDuplicate([1,2,3,4])
+# result_3 = solution.containsDuplicate([1,1,1,3,3,4,3,2,4,2])
+
+# print(result_1) # True
+# print(result_2) # False
+# print(result_3) # True
+
+# ================================
