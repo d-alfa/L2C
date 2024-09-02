@@ -287,9 +287,14 @@
 # print(result_2) # 1
 # print(result_3) # 23
 
-# ===================
-# 66. Plus One
-# ===================
+# ================================
+# 66. Plus One (Could_be_Improved) 
+# ================================
+# Array
+# Math
+# ================================
+# Time complexity : 
+# ================================
 
 # class Solution(object):
 #     def plusOne(self, digits):
@@ -368,6 +373,31 @@
 # print(result_2) # 2
 
 # ================================
+# 189. Rotate Array (Array)(Math)(Two_Pointers)(Could_be_improved)
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def rotate(self, nums, k):
+#         """
+#         :type nums: List[int]
+#         :type k: int
+#         :rtype: None Do not return anything, modify nums in-place instead.
+#         """
+#         k = k % len(nums)
+#         if k != 0:
+#             nums[:k], nums[k:] = nums[-k:], nums[:-k]
+#         return nums
+
+# solution = Solution()
+# result_1 = solution.rotate([1,2,3,4,5,6,7], 3)
+# result_2 = solution.rotate([-1,-100,3,99], 2)
+
+# print(result_1) # [5, 6, 7, 1, 2, 3, 4]
+# print(result_2) # [3, 99, -1, -100]
+
+# ================================
 # 217. Contains Duplicate (Array)(Hash_Table)(Sorting)
 # ================================
 # Time complexity : O(N)
@@ -395,5 +425,66 @@
 # print(result_1) # True
 # print(result_2) # False
 # print(result_3) # True
+
+# ================================
+# 283. Move Zeroes (Could_be_Improved)
+# ================================
+# Array
+# Two_Pointers
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def moveZeroes(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: None Do not return anything, modify nums in-place instead.
+#         """
+#         left = 0
+
+#         for right in range(len(nums)):
+#             if nums[right] != 0:
+#                 nums[right], nums[left] = nums[left], nums[right]
+#                 left += 1
+#         return nums 
+
+
+# solution = Solution()
+# result_1 = solution.moveZeroes([0,1,0,3,12])
+# result_2 = solution.moveZeroes([0])
+
+# print(result_1) # [1,3,12,0,0]
+# print(result_2) # [0]
+
+# ================================
+# 350. Intersection of Two Arrays II (Could_be_Improved) 
+# ================================
+# Array
+# Hash_Table
+# Two_Pointers
+# Binary_Search
+# Sorting
+# ================================
+# Time complexity : 
+# ================================
+
+# from collections import Counter
+
+# class Solution(object):
+#     def intersect(self, nums1, nums2):
+#         """
+#         :type nums1: List[int]
+#         :type nums2: List[int]
+#         :rtype: List[int]
+#         """
+#         return list((Counter(nums1)&Counter(nums2)).elements())
+
+# solution = Solution()
+# result_1 = solution.intersect([1,2,2,1], [2,2])
+# result_2 = solution.intersect([4,9,5], [9,4,9,8,4])
+
+# print(result_1) # [2,2]
+# print(result_2) # [4,9]
 
 # ================================
