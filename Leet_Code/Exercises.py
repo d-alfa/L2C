@@ -488,3 +488,144 @@
 # print(result_2) # [4,9]
 
 # ================================
+# 448. Find All Numbers Disappeared in an Array 
+# ================================
+# Array
+# Hash_Table
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def findDisappearedNumbers(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         # Create a hash map to track the presence of numbers
+#         num_map = {}
+
+#         # Mark the numbers that are present in the array
+#         for num in nums:
+#             num_map[num] = True
+
+#         # Identify the numbers that are missing
+#         result = []
+#         for i in range(1, len(nums) + 1):
+#             if i not in num_map:
+#                 result.append(i)
+#         return result
+
+# solution = Solution()
+# result_1 = solution.findDisappearedNumbers([4,3,2,7,8,2,3,1])
+# result_2 = solution.findDisappearedNumbers([1,1])
+
+# print(result_1) # [5,6]
+# print(result_2) # [2]
+
+# ================================
+# 485. Max Consecutive Ones
+# ================================
+# Array
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def findMaxConsecutiveOnes(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         # "result" tracks current number of consecutive 1's
+#         # "max_num" tracks maximum number of consecutive 1's
+#         max_num = result = 0
+#         for num in nums:
+#             if num == 1:
+#                 result += 1
+#                 max_num = max(max_num, result)
+#             else:
+#                 result = 0
+#         return max_num
+
+# solution = Solution()
+# result_1 = solution.findMaxConsecutiveOnes([1,1,0,1,1,1])
+# result_2 = solution.findMaxConsecutiveOnes([1,0,1,1,0,1])
+
+# print(result_1) # 3
+# print(result_2) # 2
+
+# ================================
+# 941. Valid Mountain Array
+# ================================
+# Array
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def validMountainArray(self, arr):
+#         """
+#         :type arr: List[int]
+#         :rtype: bool
+#         """
+#         n = len(arr)
+#         # Check if Array Length is Less than 3
+#         if n < 3:
+#             return False
+#         # Pointer (Peak)
+#         i = 0
+#         # Ascend to the Peak
+#         while i + 1 < n and arr[i] < arr[i + 1]:
+#             i += 1
+#         # Check if Peak is valid
+#         if i == 0 or i == n - 1:
+#             return False
+#         # Descend from the Peak
+#         while i + 1 < n and arr[i] > arr[i + 1]:
+#             i += 1
+
+#         return i == n - 1
+
+# solution = Solution()
+# result_1 = solution.validMountainArray([2,1])
+# result_2 = solution.validMountainArray([3,5,5])
+# result_3 = solution.validMountainArray([0,3,2,1])
+
+# print(result_1) # False
+# print(result_2) # False
+# print(result_3) # True
+
+# ================================
+# 1051. Height Checker
+# ================================
+# Array
+# Sorting
+# Counting_Sort
+# ================================
+# Time complexity : O(n log n)
+# ================================
+
+# class Solution(object):
+#     def heightChecker(self, heights):
+#         """
+#         :type heights: List[int]
+#         :rtype: int
+#         """
+#         result = 0
+#         sorted_heights = sorted(heights)
+#         for idx, _ in enumerate(heights):
+#             if heights[idx] != sorted_heights[idx]:
+#                 result += 1
+#         return result
+
+# solution = Solution()
+# result_1 = solution.heightChecker([1,1,4,2,1,3])
+# result_2 = solution.heightChecker([5,1,2,3,4])
+# result_3 = solution.heightChecker([1,2,3,4,5])
+
+# print(result_1) # 3
+# print(result_2) # 5
+# print(result_3) # 0
+
+# ================================
