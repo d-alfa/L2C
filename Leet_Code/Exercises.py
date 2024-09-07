@@ -119,6 +119,65 @@
 # print(result_2) # ""
 
 # ===================
+# 15. 3Sum
+# ===================
+# Array
+# Two_Pointers
+# Sorting
+# ================================
+# Time complexity : O(n^2)
+# ===================
+
+# class Solution(object):
+#     def threeSum(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[List[int]]
+#         """
+#         nums.sort()
+#         answer = []
+#         # Outer Loop (Iterates through sorted nums list)
+#         for i in range(len(nums)-2):
+#             # Skips duplicate numbers
+#             if i > 0 and nums[i] == nums[i-1]:
+#                 continue
+#             # Initialize two pointers (left(l) and right(r))
+#             l = i + 1
+#             r = len(nums) - 1
+#             # Inner Loop (Finding the triplets)
+#             while l < r :
+#                 # Counts total
+#                 total = nums[i] + nums[l] + nums[r]
+#                 # Adjust Pointers based on "total" variable
+#                 if total < 0 :
+#                     # Increases the total
+#                     l += 1
+#                 elif total > 0:
+#                     # Decreases the total
+#                     r -= 1
+#                 # Triplet found, because "total" is 0
+#                 else :
+#                     # Created variable "triplet" for number storage
+#                     triplet = [nums[i], nums[l], nums[r]]
+#                     # "triplet" is apended to "answer" list
+#                     answer.append(triplet)
+#                     # Skips Duplicates in the Two_Pointer Search
+#                     while l < r and nums[l] == triplet[1]:
+#                         l += 1
+#                     while l < r and nums[r] == triplet[2]:
+#                         r -= 1
+#         return answer
+
+# solution = Solution()
+# result_1 = solution.threeSum([-1,0,1,2,-1,-4])
+# result_2 = solution.threeSum([0,1,1])
+# result_3 = solution.threeSum([0,0,0])
+
+# print(result_1) # [[-1,-1,2],[-1,0,1]]
+# print(result_2) # []
+# print(result_3) # [[0,0,0]]
+
+# ===================
 # 20. Valid Parentheses
 # ===================
 
@@ -318,6 +377,61 @@
 # print(result_1) # [1,2,4]
 # print(result_2) # [4,3,2,2]
 # print(result_3) # [1,0]
+
+# ================================
+# 73. Set Matrix Zeroes (Documentation can be improved)
+# ================================
+# Array
+# Hash_Table
+# Matrix
+# ================================
+# Time complexity : O(m*n)
+# ================================
+
+# class Solution(object):
+#     def setZeroes(self, matrix):
+#         """
+#         :type matrix: List[List[int]]
+#         :rtype: None Do not return anything, modify matrix in-place instead.
+#         """
+#         first_row = False
+#         first_col = False
+#         rows, cols = len(matrix), len(matrix[0])
+
+#         # Checks "first_row" and "first_col" for 0
+#         first_row = 0 in matrix[0]
+#         first_col = any(row[0] == 0 for row in matrix)
+
+#         # Marks Rows and Columns using "first_row" and "first_col"
+#         for r in range(1, rows):
+#             for c in range(1, cols):
+#                 if matrix[r][c] == 0:
+#                     matrix[r][0] = 0
+#                     matrix[0][c] = 0
+
+#         # Zero Out Rows and Columns Based on Markers
+#         for r in range(1, rows):
+#             for c in range(1, cols):
+#                 if matrix[r][0] == 0 or matrix[0][c] == 0:
+#                     matrix[r][c] = 0
+
+#         # Zero Out the First Row
+#         if first_row:
+#             matrix[0] = [0] * cols
+
+#         # Zero Out the First Collumn
+#         if first_col:
+#             for row in matrix:
+#                 row[0] = 0
+
+#         print(matrix)
+    
+# solution = Solution()
+# result_1 = solution.setZeroes([[1,1,1],[1,0,1],[1,1,1]])
+# result_2 = solution.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+
+# print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
+# print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 # ===================
 # 121. Best Time to Buy and Sell Stocks
