@@ -388,53 +388,53 @@
 # Time complexity : O(m*n)
 # ================================
 
-class Solution(object):
-    def setZeroes(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: None Do not return anything, modify matrix in-place instead.
-        """
-        # Tracks if "first_row" contains 0's
-        first_row = False
-        # Tracks if "first_col" contains 0's
-        first_col = False
-        # "rows" and "cols" store the number of rows and collumns in the matrix
-        rows, cols = len(matrix), len(matrix[0])
+# class Solution(object):
+#     def setZeroes(self, matrix):
+#         """
+#         :type matrix: List[List[int]]
+#         :rtype: None Do not return anything, modify matrix in-place instead.
+#         """
+#         # Tracks if "first_row" contains 0's
+#         first_row = False
+#         # Tracks if "first_col" contains 0's
+#         first_col = False
+#         # "rows" and "cols" store the number of rows and collumns in the matrix
+#         rows, cols = len(matrix), len(matrix[0])
 
-        # Checks "first_row" and "first_col" for 0's
-        first_row = 0 in matrix[0]
-        first_col = any(row[0] == 0 for row in matrix)
+#         # Checks "first_row" and "first_col" for 0's
+#         first_row = 0 in matrix[0]
+#         first_col = any(row[0] == 0 for row in matrix)
 
-        # Marks Rows and Columns using "first_row" and "first_col"
-        for r in range(1, rows):
-            for c in range(1, cols):
-                if matrix[r][c] == 0:
-                    matrix[r][0] = 0
-                    matrix[0][c] = 0
+#         # Marks Rows and Columns using "first_row" and "first_col"
+#         for r in range(1, rows):
+#             for c in range(1, cols):
+#                 if matrix[r][c] == 0:
+#                     matrix[r][0] = 0
+#                     matrix[0][c] = 0
 
-        # Zero Out Rows and Columns Based on Markers
-        for r in range(1, rows):
-            for c in range(1, cols):
-                if matrix[r][0] == 0 or matrix[0][c] == 0:
-                    matrix[r][c] = 0
+#         # Zero Out Rows and Columns Based on Markers
+#         for r in range(1, rows):
+#             for c in range(1, cols):
+#                 if matrix[r][0] == 0 or matrix[0][c] == 0:
+#                     matrix[r][c] = 0
 
-        # Zero Out the First Row
-        if first_row:
-            matrix[0] = [0] * cols
+#         # Zero Out the First Row
+#         if first_row:
+#             matrix[0] = [0] * cols
 
-        # Zero Out the First Collumn
-        if first_col:
-            for row in matrix:
-                row[0] = 0
+#         # Zero Out the First Collumn
+#         if first_col:
+#             for row in matrix:
+#                 row[0] = 0
 
-        print(matrix)
+#         print(matrix)
     
-solution = Solution()
-result_1 = solution.setZeroes([[1,1,1],[1,0,1],[1,1,1]])
-result_2 = solution.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+# solution = Solution()
+# result_1 = solution.setZeroes([[1,1,1],[1,0,1],[1,1,1]])
+# result_2 = solution.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
 
-print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
-print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+# print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
+# print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 # ===================
 # 121. Best Time to Buy and Sell Stocks
@@ -461,6 +461,36 @@ print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 # print(result_1) # 5
 # print(result_2) # 0
+
+# ================================
+# 125. Valid Palindrome (Could be Improved)
+# ================================
+# Two_Pointers
+# String
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def isPalindrome(self, s):
+#         """
+#         :type s: str
+#         :rtype: bool
+#         """
+#         new_string = "".join(letter for letter in s if letter.isalnum()).lower()
+#         if new_string == new_string[::-1]:
+#             return True
+#         return False
+
+
+# solution = Solution()
+# result_1 = solution.isPalindrome("A man, a plan, a canal: Panama")
+# result_2 = solution.isPalindrome("race a car")
+# result_3 = solution.isPalindrome(" ")
+
+# print(result_1) # True
+# print(result_2) # False
+# print(result_3) # True
 
 # ================================
 # 169. Majority Element (Array)(Hash_Table)(Divide_and_Conquer)(Sorting)(Could_be_improved)
@@ -542,6 +572,51 @@ print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 # print(result_1) # True
 # print(result_2) # False
 # print(result_3) # True
+
+# ================================
+# 242. Valid Anagram (Could be Improved)
+# ================================
+# Hash_Table
+# String
+# Sorting
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def isAnagram(self, s, t):
+#         """
+#         :type s: str
+#         :type t: str
+#         :rtype: bool
+#         """
+#         if len(s) != len(t):
+#             return False
+
+#         sMap = {}
+#         tMap = {}
+
+#         for l in s:
+#             if l in sMap:
+#                 sMap[l] += 1
+#             else:
+#                 sMap[l] = 1
+
+#         for l in t:
+#             if l in tMap:
+#                 tMap[l] += 1
+#             else:
+#                 tMap[l] = 1
+
+#         return sMap == tMap
+
+
+# solution = Solution()
+# result_1 = solution.isAnagram("anagram", "nagaram")
+# result_2 = solution.isAnagram("rat", "car")
+
+# print(result_1) # True
+# print(result_2) # False
 
 # ================================
 # 283. Move Zeroes (Could_be_Improved)
@@ -671,6 +746,42 @@ print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 # print(result_1) # 3
 # print(result_2) # 2
+
+# ================================
+# 680. Valid Anagram II (Documentation can be improved)
+# ================================
+# Two_Pointers
+# String
+# Greedy
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def validPalindrome(self, s):
+#         """
+#         :type s: str
+#         :rtype: bool
+#         """
+#         left = 0
+#         right = len(s)-1
+#         while left <= right:
+#             if s[left] != s[right]:
+#                 string_1 = s[:left] + s[left + 1:]
+#                 string_2 = s[:right] + s[right + 1:]
+#                 return string_1 == string_1[::-1] or string_2 == string_2[::-1]
+#             left += 1
+#             right -= 1
+#         return True
+
+# solution = Solution()
+# result_1 = solution.validPalindrome("aba")
+# result_2 = solution.validPalindrome("abca")
+# result_3 = solution.validPalindrome("abc")
+
+# print(result_1) # True
+# print(result_2) # True
+# print(result_3) # False 
 
 # ================================
 # 941. Valid Mountain Array
