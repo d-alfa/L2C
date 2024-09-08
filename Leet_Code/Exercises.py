@@ -388,50 +388,53 @@
 # Time complexity : O(m*n)
 # ================================
 
-# class Solution(object):
-#     def setZeroes(self, matrix):
-#         """
-#         :type matrix: List[List[int]]
-#         :rtype: None Do not return anything, modify matrix in-place instead.
-#         """
-#         first_row = False
-#         first_col = False
-#         rows, cols = len(matrix), len(matrix[0])
+class Solution(object):
+    def setZeroes(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+        # Tracks if "first_row" contains 0's
+        first_row = False
+        # Tracks if "first_col" contains 0's
+        first_col = False
+        # "rows" and "cols" store the number of rows and collumns in the matrix
+        rows, cols = len(matrix), len(matrix[0])
 
-#         # Checks "first_row" and "first_col" for 0
-#         first_row = 0 in matrix[0]
-#         first_col = any(row[0] == 0 for row in matrix)
+        # Checks "first_row" and "first_col" for 0's
+        first_row = 0 in matrix[0]
+        first_col = any(row[0] == 0 for row in matrix)
 
-#         # Marks Rows and Columns using "first_row" and "first_col"
-#         for r in range(1, rows):
-#             for c in range(1, cols):
-#                 if matrix[r][c] == 0:
-#                     matrix[r][0] = 0
-#                     matrix[0][c] = 0
+        # Marks Rows and Columns using "first_row" and "first_col"
+        for r in range(1, rows):
+            for c in range(1, cols):
+                if matrix[r][c] == 0:
+                    matrix[r][0] = 0
+                    matrix[0][c] = 0
 
-#         # Zero Out Rows and Columns Based on Markers
-#         for r in range(1, rows):
-#             for c in range(1, cols):
-#                 if matrix[r][0] == 0 or matrix[0][c] == 0:
-#                     matrix[r][c] = 0
+        # Zero Out Rows and Columns Based on Markers
+        for r in range(1, rows):
+            for c in range(1, cols):
+                if matrix[r][0] == 0 or matrix[0][c] == 0:
+                    matrix[r][c] = 0
 
-#         # Zero Out the First Row
-#         if first_row:
-#             matrix[0] = [0] * cols
+        # Zero Out the First Row
+        if first_row:
+            matrix[0] = [0] * cols
 
-#         # Zero Out the First Collumn
-#         if first_col:
-#             for row in matrix:
-#                 row[0] = 0
+        # Zero Out the First Collumn
+        if first_col:
+            for row in matrix:
+                row[0] = 0
 
-#         print(matrix)
+        print(matrix)
     
-# solution = Solution()
-# result_1 = solution.setZeroes([[1,1,1],[1,0,1],[1,1,1]])
-# result_2 = solution.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
+solution = Solution()
+result_1 = solution.setZeroes([[1,1,1],[1,0,1],[1,1,1]])
+result_2 = solution.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])
 
-# print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
-# print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
+print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 # ===================
 # 121. Best Time to Buy and Sell Stocks
