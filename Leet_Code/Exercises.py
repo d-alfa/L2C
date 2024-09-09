@@ -748,7 +748,7 @@
 # print(result_2) # 2
 
 # ================================
-# 680. Valid Anagram II (Documentation can be improved)
+# 680. Valid Palindrome II (Documentation can be improved)
 # ================================
 # Two_Pointers
 # String
@@ -763,15 +763,26 @@
 #         :type s: str
 #         :rtype: bool
 #         """
+#         # Initialize pointer "left" (start of string)
 #         left = 0
+#         # Initialize pointer "right" (end of string)
 #         right = len(s)-1
+#         # Iterate while two pointers have not crossed each other
 #         while left <= right:
+#             # Checks if characters at the current pointers are not equal
 #             if s[left] != s[right]:
+#                 # Mismatch found, two versions of the string are created
+#                  # "string_1" is created by removing the character at the "left" pointer
 #                 string_1 = s[:left] + s[left + 1:]
+#                  # "string_2" is created by removing the character at the "right" pointer
 #                 string_2 = s[:right] + s[right + 1:]
+#                 # Check if either string is a palindrome 
 #                 return string_1 == string_1[::-1] or string_2 == string_2[::-1]
+#             # No mismatch found
+#              # Pointers move inward towards the center
 #             left += 1
 #             right -= 1
+#         # Return True if no more than one mismatch was found or fixed
 #         return True
 
 # solution = Solution()
