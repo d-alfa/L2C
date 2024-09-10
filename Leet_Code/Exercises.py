@@ -868,3 +868,72 @@
 # print(result_3) # 0
 
 # ================================
+# 1672. Richest Customer Wealth
+# ================================
+# Array
+# Matrix
+# ================================
+# Time complexity : O(m*n)
+ # More efficient than O(n^2), less efficient than O(n)
+# ================================
+
+# class Solution(object):
+#     def maximumWealth(self, accounts):
+#         """
+#         :type accounts: List[List[int]]
+#         :rtype: int
+#         """
+#         max_wealth = 0
+#         for i in range(len(accounts)):
+#             total_wealth = sum(accounts[i])
+#             max_wealth = max(max_wealth, total_wealth)
+#         return max_wealth
+
+# class Solution(object):
+#     def maximumWealth(self, accounts):
+#         """
+#         :type accounts: List[List[int]]
+#         :rtype
+#         """
+#         return max(sum(acc) for acc in accounts)
+
+# solution = Solution()
+# result_1 = solution.maximumWealth([[1,2,3],[3,2,1]])
+# result_2 = solution.maximumWealth([[1,5],[7,3],[3,5]])
+# result_3 = solution.maximumWealth([[2,8,7],[7,1,3],[1,9,5]])
+
+# print(result_1) # 6
+# print(result_2) # 10
+# print(result_3) # 17
+
+# ================================
+# 3190. Find Minimum Operations to Make Elements Divisible by Three
+# ================================
+# Array
+# Math
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def minimumOperations(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         count = 0
+#         for num in nums:
+#             # If remainder is 1, subtraction is required to make number divisible by 3
+#             # If remainder is 2, addition is required to make number divisible by 3
+#             if num % 3 != 0:
+#                 count += 1
+#         return count
+
+# solution = Solution()
+# result_1 = solution.minimumOperations([1,2,3,4])
+# result_2 = solution.minimumOperations([3,6,9])
+
+# print(result_1) # 3
+# print(result_2) # 0
+
+# ================================
