@@ -883,19 +883,15 @@
 #         :type accounts: List[List[int]]
 #         :rtype: int
 #         """
+#         # More explicit, clear and easy to follow
 #         max_wealth = 0
 #         for i in range(len(accounts)):
 #             total_wealth = sum(accounts[i])
 #             max_wealth = max(max_wealth, total_wealth)
 #         return max_wealth
-
-# class Solution(object):
-#     def maximumWealth(self, accounts):
-#         """
-#         :type accounts: List[List[int]]
-#         :rtype
-#         """
-#         return max(sum(acc) for acc in accounts)
+    
+        #  More concise, leverages Python's built-in functions
+        #  return max(sum(acc) for acc in accounts)
 
 # solution = Solution()
 # result_1 = solution.maximumWealth([[1,2,3],[3,2,1]])
