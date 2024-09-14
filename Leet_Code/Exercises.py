@@ -868,6 +868,39 @@
 # print(result_3) # 0
 
 # ================================
+# 1512. Number of Good Pairs (Need_Documentation)
+# ================================
+# Array
+# Hash_Table
+# Math
+# Counting
+# ================================
+# Time complexity : O(n^2) (Could_be_Improved)
+# ================================
+
+# class Solution(object):
+#     def numIdenticalPairs(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         count = 0
+#         for i in range(len(nums)):
+#             for j in range(i+1, len(nums)):
+#                 if nums[i] == nums[j]:
+#                     count += 1
+#         return count
+
+# solution = Solution()
+# result_1 = solution.numIdenticalPairs([1,2,3,1,1,3])
+# result_2 = solution.numIdenticalPairs([1,1,1,1])
+# result_3 = solution.numIdenticalPairs([1,2,3])
+
+# print(result_1) # 4
+# print(result_2) # 6
+# print(result_3) # 0
+
+# ================================
 # 1672. Richest Customer Wealth
 # ================================
 # Array
@@ -901,6 +934,121 @@
 # print(result_1) # 6
 # print(result_2) # 10
 # print(result_3) # 17
+
+# ================================
+# 1920. Build Array from Permutation
+# ================================
+# Array
+# Simulation
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def buildArray(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         ans = [0] * len(nums)
+#         for i in range(len(nums)):
+#             ans[i] = nums[nums[i]]
+#         return ans
+
+# solution = Solution()
+# result_1 = solution.buildArray([0,2,1,5,3,4])
+# result_2 = solution.buildArray([5,0,1,2,3,4])
+
+# print(result_1) # [0,1,2,4,5,3]
+# print(result_2) # [4,5,0,1,2,3]
+
+# ================================
+# 1929. Concatenation of Array
+# ================================
+# Array
+# Simulation
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def getConcatenation(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         return nums + nums
+
+# solution = Solution()
+# result_1 = solution.getConcatenation([1,2,1])
+# result_2 = solution.getConcatenation([1,3,2,1])
+
+# print(result_1) # [1,2,1,1,2,1]
+# print(result_2) # [1,3,2,1,1,3,2,1]
+
+# ================================
+# 2011. Final Value of Variable After Performing Operations
+# ================================
+# Array
+# String
+# Simulation
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def finalValueAfterOperations(self, operations):
+#         """
+#         :type operations: List[str]
+#         :rtype: int
+#         """
+#         X = 0
+#         for o in range(len(operations)):
+#             if operations[o] == "++X" or operations[o] == "X++":
+#                 X += 1
+#             else:
+#                 X -= 1
+#         return X
+
+# solution = Solution()
+# result_1 = solution.finalValueAfterOperations(["--X","X++","X++"])
+# result_2 = solution.finalValueAfterOperations(["++X","++X","X++"])
+# result_3 = solution.finalValueAfterOperations(["X++","++X","--X","X--"])
+
+# print(result_1) # 1
+# print(result_2) # 3
+# print(result_3) # 0
+
+# ================================
+# 2942. Find Words Containing Character
+# ================================
+# Array
+# String
+# ================================
+# Time complexity : O(n * m)
+# ================================
+
+# class Solution(object):
+#     def findWordsContaining(self, words, x):
+#         """
+#         :type words: List[str]
+#         :type x: str
+#         :rtype: List[int]
+#         """
+#         ans = []
+#         for i, word in enumerate(words):
+#             if x in word:
+#                 ans.append(i)
+#         return ans
+
+# solution = Solution()
+# result_1 = solution.findWordsContaining(["leet","code"], "e")
+# result_2 = solution.findWordsContaining(["abc","bcd","aaaa","cbc"], "a")
+# result_3 = solution.findWordsContaining(["abc","bcd","aaaa","cbc"], "z")
+
+# print(result_1) # [0,1]
+# print(result_2) # [0,2]
+# print(result_3) # []
 
 # ================================
 # 3190. Find Minimum Operations to Make Elements Divisible by Three
