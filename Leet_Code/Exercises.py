@@ -1057,6 +1057,47 @@
 # print(result_3) # 17
 
 # ================================
+# 1684. Count the Number of Consistent Strings
+# ================================
+# Array
+# Hash_Table
+# String
+# Bit_Manipulation
+# Counting
+# ================================
+# Time complexity : O(N*M)
+# ================================
+
+# class Solution(object):
+#     def countConsistentStrings(self, allowed, words):
+#         """
+#         :type allowed: str
+#         :type words: List[str]
+#         :rtype: int
+#         """
+#         # Inconsistent word count
+#         count = 0
+#         for word in words:
+#             for char in word:
+#                 # Check if character is not in the allowed string
+#                 if char not in allowed:
+#                         # Inconsistent word found, increment count by 1
+#                         count += 1
+#                         # Stops checking further characters in current word
+#                          # because we already know that the word is inconsistent
+#                         break
+#         return len(words) - count
+
+# solution = Solution()
+# result_1 = solution.countConsistentStrings("ab", ["ad","bd","aaab","baa","badab"])
+# result_2 = solution.countConsistentStrings("abc", ["a","b","c","ab","ac","bc","abc"])
+# result_3 = solution.countConsistentStrings("cad", ["cc","acd","b","ba","bac","bad","ac","d"])
+
+# print(result_1) # 2
+# print(result_2) # 7
+# print(result_3) # 4
+
+# ================================
 # 1897. Redistribute Characters to Make All Strings Equal (Need_Documentation)
 # ================================
 # Hash_Table
@@ -1215,6 +1256,46 @@
 # print(result_1) # 1
 # print(result_2) # 3
 # print(result_3) # 0
+
+# ================================
+# 2373. Largest Local Values in a Matrix
+# ================================
+# Array
+# Matrix
+# ================================
+# Time complexity : O(n^2)
+# ================================
+
+# class Solution(object):
+#     def largestLocal(self, grid):
+#         """
+#         :type grid: List[List[int]]
+#         :rtype: List[List[int]]
+#         """
+#         # Number of rows in the "grid"
+#         n = len(grid)
+#         # New result grid of size (n-2) x (n-2)
+#         res = [[0] * (n-2) for _ in range(n-2)]
+#         # Iterate over possible 3x3 subgrids
+#         for i in range(n - 2):
+#             for j in range(n - 2):
+#                 # Initialize max_val variable
+#                 max_val = float("-inf")
+#                 # Iterate over the current 3x3 subgrid
+#                 for ii in range(i, i + 3):
+#                     for jj in range(j, j + 3):
+#                         # Update max_val with maximum value
+#                         max_val = max(max_val, grid[ii][jj])
+#                 # Store the maximum value in the result grid
+#                 res[i][j] = max_val
+#         return res
+
+# solution = Solution()
+# result_1 = solution.largestLocal([[9,9,8,1],[5,6,2,6],[8,2,6,4],[6,2,2,2]])
+# result_2 = solution.largestLocal([[1,1,1,1,1],[1,1,1,1,1],[1,1,2,1,1],[1,1,1,1,1],[1,1,1,1,1]])
+
+# print(result_1) # [[9,9],[8,6]]
+# print(result_2) # [[2,2,2],[2,2,2],[2,2,2]]
 
 # ================================
 # 2706. Buy Two Chocolates
