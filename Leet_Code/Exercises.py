@@ -1258,6 +1258,40 @@
 # print(result_3) # 0
 
 # ================================
+# 2037. Minimum Number of Moves to Seat Everyone
+# ================================
+# Array
+# Greedy
+# Sorting
+# Counting_Sort
+# ================================
+# Time complexity : O(n log n)
+# ================================
+
+# class Solution(object):
+#     def minMovesToSeat(self, seats, students):
+#         """
+#         :type seats: List[int]
+#         :type students: List[int]
+#         :rtype: int
+#         """
+#         seats.sort()
+#         students.sort()
+#         count = 0
+#         for i in range(len(seats)):
+#             count += abs(seats[i] - students[i])
+#         return count
+                
+# solution = Solution()
+# result_1 = solution.minMovesToSeat([3,1,5], [2,7,4])
+# result_2 = solution.minMovesToSeat([4,1,5,9], [1,3,2,6])
+# result_3 = solution.minMovesToSeat([2,2,6,6], [1,3,2,6])
+
+# print(result_1) # 4
+# print(result_2) # 7
+# print(result_3) # 4
+
+# ================================
 # 2373. Largest Local Values in a Matrix
 # ================================
 # Array
