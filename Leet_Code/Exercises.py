@@ -868,6 +868,34 @@
 # print(result_3) # 0
 
 # ================================
+# 1313. Decompress Run-Lenght Encoded List (Need_Documentation)
+# ================================
+# Array
+# ================================
+# Time complexity : 
+# ================================
+
+# class Solution(object):
+#     def decompressRLElist(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         decomp_list = []
+
+#         for i in range(0, len(nums), 2):
+#             for _ in range(nums[i]):
+#                 decomp_list.append(nums[i+1])
+#         return decomp_list
+
+# solution = Solution()
+# result_1 = solution.decompressRLElist([1,2,3,4])
+# result_2 = solution.decompressRLElist([1,1,2,3])
+
+# print(result_1) # [2,4,4,4]
+# print(result_2) # [1,3,3]
+
+# ================================
 # 1431. Kids With the Greatest Number of Candies (Need_Documentation)
 # ================================
 # Array
@@ -1029,6 +1057,82 @@
 # print(result_3) # 17
 
 # ================================
+# 1897. Redistribute Characters to Make All Strings Equal (Need_Documentation)
+# ================================
+# Hash_Table
+# String
+# Counting
+# ================================
+# Time complexity : O(m*n)
+# ================================
+
+# class Solution(object):
+#     def makeEqual(self, words):
+#         """
+#         :type words: List[str]
+#         :rtype: bool
+#         """
+#         char_count = {}
+#         for word in words:
+#             for char in word:
+#                 if char not in char_count:
+#                     char_count[char] = 1
+#                 else:
+#                     char_count[char] += 1
+#         for count in char_count.values():
+#             if count % len(words) != 0:
+#                 return False
+#         return True
+
+# solution = Solution()
+# result_1 = solution.makeEqual(["abc","aabc","bc"])
+# result_2 = solution.makeEqual(["ab","a"])
+
+# print(result_1) # True
+# print(result_2) # False
+
+# ================================
+# 1913. Maximum Product Difference Between Two Pairs (Need_Documentation)
+# ================================
+# Array
+# Sorting
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def maxProductDifference(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         w, x = 0, 0
+#         y, z = float('inf'), float('inf')
+
+#         for n in nums:
+
+#             if n > w:
+#                 x = w
+#                 w = n
+#             elif n > x:
+#                 x = n
+            
+#             if n < y:
+#                 z = y
+#                 y = n
+#             elif n < z:
+#                 z = n
+
+#         return (w * x) - (y * z)
+
+# solution = Solution()
+# result_1 = solution.maxProductDifference([5,6,2,7,4])
+# result_2 = solution.maxProductDifference([4,2,5,9,7,4,8])
+
+# print(result_1) # 34
+# print(result_2) # 64
+
+# ================================
 # 1920. Build Array from Permutation
 # ================================
 # Array
@@ -1113,6 +1217,37 @@
 # print(result_3) # 0
 
 # ================================
+# 2706. Buy Two Chocolates
+# ================================
+# Array
+# Greedy
+# Sorting
+# ================================
+# Time complexity : O(n log n)
+# ================================
+
+# class Solution(object):
+#     def buyChoco(self, prices, money):
+#         """
+#         :type prices: List[int]
+#         :type money: int
+#         :rtype: int
+#         """
+#         prices.sort()
+#         balance = money - (prices[0] + prices[1])
+#         if balance >= 0:
+#             return balance
+#         else:
+#             return money
+
+# solution = Solution()
+# result_1 = solution.buyChoco([1,2,2], 3)
+# result_2 = solution.buyChoco([3,2,3], 3)
+
+# print(result_1) # 0
+# print(result_2) # 3
+
+# ================================
 # 2798. Number of Employees Who Met the Target
 # ================================
 # Array
@@ -1170,6 +1305,32 @@
 # print(result_1) # [0,1]
 # print(result_2) # [0,2]
 # print(result_3) # []
+
+# ================================
+# 3110. Score of a String (Need_Documentation)
+# ================================
+# String
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def scoreOfString(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         score = 0
+#         for i in range(len(s) - 1):
+#             score += abs(ord(s[i]) - ord(s[i + 1]))
+#         return score
+
+# solution = Solution()
+# result_1 = solution.scoreOfString("hello")
+# result_2 = solution.scoreOfString("zaz")
+
+# print(result_1) # 13
+# print(result_2) # 50
 
 # ================================
 # 3190. Find Minimum Operations to Make Elements Divisible by Three
