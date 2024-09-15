@@ -868,6 +868,70 @@
 # print(result_3) # 0
 
 # ================================
+# 1431. Kids With the Greatest Number of Candies (Need_Documentation)
+# ================================
+# Array
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def kidsWithCandies(self, candies, extraCandies):
+#         """
+#         :type candies: List[int]
+#         :type extraCandies: int
+#         :rtype: List[bool]
+#         """
+#         list_bool = []
+#         for candie in candies:
+#             if (candie + extraCandies) >= max(candies):
+#                 list_bool.append(True)
+#             else:
+#                 list_bool.append(False)
+#         return list_bool
+
+# solution = Solution()
+# result_1 = solution.kidsWithCandies([2,3,5,1,3], 3)
+# result_2 = solution.kidsWithCandies([4,2,1,1,2], 1)
+# result_3 = solution.kidsWithCandies([12,1,12], 10)
+
+# print(result_1) # [True, True, True, False, True]
+# print(result_2) # [True, False, False, False, False]
+# print(result_3) # [True, False, True]
+
+# ================================
+# 1470. Shuffle the Array (Need_documentation)
+# ================================
+# Array
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def shuffle(self, nums, n):
+#         """
+#         :type nums: List[int]
+#         :type n: int
+#         :rtype: List[int]
+#         """
+#         k1=nums[:n]
+#         k2=nums[n:2*n]
+#         k3=[]
+#         for i in range(n):
+#             k3.append(k1[i])
+#             k3.append(k2[i])
+#         return k3
+        
+# solution = Solution()
+# result_1 = solution.shuffle([2,5,1,3,4,7], 3)
+# result_2 = solution.shuffle([1,2,3,4,4,3,2,1], 4)
+# result_3 = solution.shuffle([1,1,2,2], 2)
+
+# print(result_1) # [2,3,5,4,1,7]
+# print(result_2) # [1,4,2,3,3,2,4,1]
+# print(result_3) # [1,2,1,2]
+
+# ================================
 # 1512. Number of Good Pairs (Need_Documentation)
 # ================================
 # Array
@@ -899,6 +963,35 @@
 # print(result_1) # 4
 # print(result_2) # 6
 # print(result_3) # 0
+
+# ================================
+# 1637. Widest Vertical Area Two Points Containing No Points (Need_Documentation)
+# ================================
+# Array
+# Sorting
+# ================================
+# Time complexity : O (n log n) (Could_be_improved)
+# ================================
+
+# class Solution(object):
+#     def maxWidthOfVerticalArea(self, points):
+#         """
+#         :type points: List[List[int]]
+#         :rtype: int
+#         """
+#         points.sort(key=lambda point: point[0])
+#         max_width = 0
+#         for i in range(1, len(points)):
+#             width = points[i][0] - points[i - 1][0]
+#             max_width = max(max_width, width)
+#         return max_width
+
+# solution = Solution()
+# result_1 = solution.maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]])
+# result_2 = solution.maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]])
+
+# print(result_1) # 1
+# print(result_2) # 3
 
 # ================================
 # 1672. Richest Customer Wealth
@@ -1018,6 +1111,34 @@
 # print(result_1) # 1
 # print(result_2) # 3
 # print(result_3) # 0
+
+# ================================
+# 2798. Number of Employees Who Met the Target
+# ================================
+# Array
+# ================================
+# Time complexity : O(n)
+# ================================
+
+# class Solution(object):
+#     def numberOfEmployeesWhoMetTarget(self, hours, target):
+#         """
+#         :type hours: List[int]
+#         :type target: int
+#         :rtype: int
+#         """
+#         count = 0
+#         for hour in hours:
+#             if hour >= target:
+#                 count += 1
+#         return count
+
+# solution = Solution()
+# result_1 = solution.numberOfEmployeesWhoMetTarget([0,1,2,3,4], 2)
+# result_2 = solution.numberOfEmployeesWhoMetTarget([5,1,4,2,2], 6)
+
+# print(result_1) # 3
+# print(result_2) # 0
 
 # ================================
 # 2942. Find Words Containing Character
