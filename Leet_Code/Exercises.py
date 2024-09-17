@@ -287,24 +287,33 @@
 # print(result_1) # [2,2] length 2
 # print(result_2) # [0,1,3,0,4] length 5
 
-# ===================
-# 35. Search Insert Position (Array)(Binary Search)(Unfinished)
-# ===================
-# Time complexity : 
-# ===================
+# ================================
+# 35. Search Insert Position (Need_Documentation)
+# ================================
+# Array
+# Binary_Search
+# ================================
+# Time complexity : O(log n)
+# ================================
 
 # class Solution(object):
-#     def searchInsert(self, nums, target):
-#         """
-#         :type nums: List[int]
-#         :type target: int
-#         :rtype: int
-#         """
-#         for idx, num in enumerate(nums):
-#             if num == target:
-#                 return idx
-#             if target != num:
-
+# 	def searchInsert(self, nums, target):
+# 		"""
+# 		:type nums: List[int]
+# 		:type target: int
+# 		:rtype: int
+# 		"""
+# 		left = 0
+# 		right = len(nums) - 1
+# 		while left <= right:
+# 			mid = (left + right) // 2
+# 			if nums[mid] < target:
+# 				left = mid + 1
+# 			elif nums[mid] > target:
+# 				right = mid - 1
+# 			else:
+# 				return mid
+# 		return left
 
 # solution = Solution()
 # result_1 = solution.searchInsert([1,3,5,6], 5)
@@ -313,7 +322,7 @@
 
 # print(result_1) # 2
 # print(result_2) # 1
-# print(result_3) # 4        
+# print(result_3) # 4
 
 # ================================
 # 53. Maximum Subarray (Array)(Divide and Conquer)(Dynamic Programming)
