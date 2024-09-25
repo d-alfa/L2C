@@ -552,25 +552,28 @@
 # Time complexity : O(n)
 # ================================
 
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        answer = 0
-        for num in nums:
-            answer ^= num
-        return answer
+# class Solution(object):
+#     def singleNumber(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         answer = 0
+#         for num in nums:
+            # XOR operator "^"
+            # Compares two binary numbers bit by bit
+            # returns 1 if bits are different, and 0 if the bits are the same
+#             answer ^= num
+#         return answer
         
-solution = Solution()
-result_1 = solution.singleNumber([2,2,1])
-result_2 = solution.singleNumber([4,1,2,1,2])
-result_3 = solution.singleNumber([1])
+# solution = Solution()
+# result_1 = solution.singleNumber([2,2,1])
+# result_2 = solution.singleNumber([4,1,2,1,2])
+# result_3 = solution.singleNumber([1])
 
-print(result_1) # 1
-print(result_2) # 4
-print(result_3) # 1
+# print(result_1) # 1
+# print(result_2) # 4
+# print(result_3) # 1
 
 # ================================
 # 169. Majority Element (Array)(Hash_Table)(Divide_and_Conquer)(Sorting)(Could_be_improved)
