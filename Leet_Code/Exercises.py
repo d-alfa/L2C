@@ -445,6 +445,48 @@
 # print(result_1) # [[1,0,1],[0,0,0],[1,0,1]]
 # print(result_2) # [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
+# ================================
+# 88. Merge Sorted Array (Need_Documentation)
+# ================================
+# Array
+# Two_Pointers
+# Sorting
+# ================================
+# Time complexity : O(m + n)
+# ================================
+
+# class Solution(object):
+#     def merge(self, nums1, m, nums2, n):
+#         """
+#         :type nums1: List[int]
+#         :type m: int
+#         :type nums2: List[int]
+#         :type n: int
+#         :rtype: None Do not return anything, modify nums1 in-place instead.
+#         """
+#         m_idx = m - 1
+#         n_idx = n - 1
+#         right = m + n - 1
+
+#         while n_idx >= 0:
+#             if m_idx >= 0 and nums1[m_idx] > nums2[n_idx]:
+#                 nums1[right] = nums1[m_idx]
+#                 m_idx -= 1
+#             else:
+#                 nums1[right] = nums2[n_idx]
+#                 n_idx -= 1
+            
+#             right -= 1
+
+# solution = Solution()
+# result_1 = solution.merge([1,2,3,0,0,0], 3, [2,5,6], 3)
+# result_2 = solution.merge([1], 1, [], 0)
+# result_3 = solution.merge([0], 0, [1], 1)
+
+# print(result_1) # [1,2,2,3,5,6]
+# print(result_2) # [1]
+# print(result_3) # [1]
+
 # ===================
 # 121. Best Time to Buy and Sell Stocks
 # ===================
@@ -500,6 +542,35 @@
 # print(result_1) # True
 # print(result_2) # False
 # print(result_3) # True
+
+# ================================
+# 136. Single Number (Need_Documentation)
+# ================================
+# Array
+# Bit_manipulation
+# ================================
+# Time complexity : O(n)
+# ================================
+
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        answer = 0
+        for num in nums:
+            answer ^= num
+        return answer
+        
+solution = Solution()
+result_1 = solution.singleNumber([2,2,1])
+result_2 = solution.singleNumber([4,1,2,1,2])
+result_3 = solution.singleNumber([1])
+
+print(result_1) # 1
+print(result_2) # 4
+print(result_3) # 1
 
 # ================================
 # 169. Majority Element (Array)(Hash_Table)(Divide_and_Conquer)(Sorting)(Could_be_improved)
