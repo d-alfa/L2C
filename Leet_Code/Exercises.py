@@ -702,6 +702,78 @@
 # print(result_2) # False
 
 # ================================
+# 268. Missing Number (Need_Documentation)
+# ================================
+# Array
+# Hash_Table
+# Math
+# Binary_Search
+# Bit_Manipulation
+# Sorting
+# ================================
+
+# class Solution(object):
+#     def missingNumber(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+        # ======================
+        # Hash_table (set)
+        # ======================
+        # Time complexity : O(n)
+        # ======================
+
+        # n = len(nums)
+        # num_set = set(range(n + 1))
+
+        # for num in nums:
+        #     num_set.remove(num)
+
+        # return num_set.pop()
+
+        # ======================
+        # Binary_Search
+        # ======================
+        # Time complexity : O(n log n)
+        # ======================
+
+        # nums.sort()
+
+        # left = 0
+        # right = len(nums) - 1
+
+        # while left <= right:
+        #     mid = (left + right) // 2
+        #     if nums[mid] == mid:
+        #         left = mid + 1
+        #     else:
+        #         right = mid - 1
+
+        # return left
+
+        # ======================
+        # Bit_Manipulation
+        # ======================
+        # Time complexity : O(n)
+        # ======================
+
+        # missing = len(nums)
+
+        # for i in range(len(nums)):
+        #     missing ^= i ^ nums[i]
+        # return missing
+
+# solution = Solution()
+# result_1 = solution.missingNumber([3,0,1])
+# result_2 = solution.missingNumber([0,1])
+# result_3 = solution.missingNumber([9,6,4,2,3,5,7,0,1])
+
+# print(result_1) # 2
+# print(result_2) # 2
+# print(result_3) # 8
+
+# ================================
 # 283. Move Zeroes (Could_be_Improved)
 # ================================
 # Array
