@@ -48,6 +48,51 @@
 # print(result_2) # False
 # print(result_3) # False
 
+# ================================
+# 11. Container With Most Water (Medium) (Need_Documentation)
+# ================================
+# - Array
+# - Two_Pointers
+# - Greedy
+# ================================
+
+# ======================
+# Two_Pointers
+# ======================
+# Time complexity : O(n)
+# ======================
+
+# class Solution(object):
+#     def maxArea(self, height):
+#         """
+#         :type height: List[int]
+#         :rtype: int
+#         """
+#         max_area = 0
+#         left = 0
+#         right = len(height) - 1
+#         while left < right:
+#             area = (right - left) * min(height[right], height[left])
+#             max_area = max(max_area, area)
+#             if height[left] < height[right]:
+#                 left += 1
+#             else:
+#                 right -= 1
+#         return max_area
+
+# ======================
+# Testing & Debugging
+# ======================
+    
+# if __name__ == "__main__":
+#     solution = Solution()
+    
+#     result_1 = solution.maxArea([1,8,6,2,5,4,8,3,7])
+#     print(result_1) # Expected: 49
+
+#     result_2 = solution.maxArea([1,1])
+#     print(result_2) # Expected: 1
+
 # ===================
 # 13. Roman to Integer
 # ===================
@@ -286,6 +331,51 @@
 
 # print(result_1) # [2,2] length 2
 # print(result_2) # [0,1,3,0,4] length 5
+
+# ================================
+# 28. Find the Index of the First Occurrence in a String (Easy)
+# ================================
+# - Two_Pointers
+# - String
+# - String_Matching
+# ================================
+
+# ======================
+# Two_Pointers (Need_Documentation)
+# ======================
+# Time complexity : O(n)
+# ======================
+
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        hay_len = len(haystack)
+        needle_len = len(needle)
+
+        for i in range(hay_len - needle_len + 1):
+            j = 0
+            while j < needle_len and haystack[i + j] == needle[j]:
+                j += 1
+            if j == needle_len:
+                return i
+        return -1
+
+# ======================
+# Testing & Debugging
+# ======================
+    
+if __name__ == "__main__":
+    solution = Solution()
+    
+    result_1 = solution.strStr("sadbutsad", "sad")
+    print(result_1) # Expected: 0
+
+    result_2 = solution.strStr("leetcode", "leeto")
+    print(result_2) # Expected: -1
 
 # ================================
 # 35. Search Insert Position (Need_Documentation)
